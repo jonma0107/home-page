@@ -102,7 +102,7 @@ function carritoHTML() {
       <a href="#" class="borrar-curso" data-id="${id}"> X </a>
     </td>
     `;
-    // Agrega el HTML del carrito em el tbody
+    // Agrega el HTML del carrito en el tbody
     contenedorCarrito.appendChild(row);
 
   });
