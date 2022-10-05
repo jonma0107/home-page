@@ -24,7 +24,7 @@ function registrarEventListeners() {
 
 // *************************************** FUNCIONES ****************************************
 
-// ***************************** FUNCION AGREGA CURSO DEL CARRITO ***************************
+// ***************************** FUNCIÓN AGREGA CURSO DEL CARRITO ***************************
 function agregarCurso(e) {
   e.preventDefault();
   if (e.target.classList.contains('agregar-carrito')) { // Prevenir Event Bubbling con Delegacion
@@ -34,18 +34,8 @@ function agregarCurso(e) {
   };
 };
 
-// *************************** FUNCION ELIMINA CURSO DEL CARRITO ******************************
-function eliminarCurso(e) {
-  if (e.target.classList.contains('borrar-curso')) { // Delegación
-    const cursoId = e.target.getAttribute('data-id');
-    // Elimina del arreglo articulosCarrito por el data-id
-    articulosCarrito = articulosCarrito.filter(curso => curso.id !== cursoId);
-    carritoHTML(); // volvemos iterar sobre el carrito y mosrtar su HTML
 
-  };
-
-};
-// **************************  FUNCION LEE CONTENIDO DEL HTML  *******************************
+// **************************  FUNCIÓN LEE CONTENIDO DEL HTML  *******************************
 
 // Lee el Contenido del HTML al que le dimos Click y extrae información
 function leerDatosCurso(curso) {
@@ -82,7 +72,7 @@ function leerDatosCurso(curso) {
 
 };
 
-// ********************** FUNCION MUESTRA EL CARRITO DE COMPRAS EN EL HTML ***********************
+// ********************** FUNCIÓN MUESTRA EL CARRITO DE COMPRAS EN EL HTML ***********************
 function carritoHTML() {
   //limpiar HTML previo
   limpiarHTML();
@@ -118,6 +108,18 @@ function limpiarHTML() {
   //   contenedorCarrito.removeChild(contenedorCarrito.firstChild)
 
   // }
-}
+};
+
+// *************************** FUNCIÓN ELIMINA CURSO DEL CARRITO ******************************
+function eliminarCurso(e) {
+  if (e.target.classList.contains('borrar-curso')) { // Delegación
+    const cursoId = e.target.getAttribute('data-id');
+    // Elimina del arreglo articulosCarrito por el data-id
+    articulosCarrito = articulosCarrito.filter(curso => curso.id !== cursoId);
+    carritoHTML(); // volvemos iterar sobre el carrito y mosrtar su HTML
+
+  };
+
+};
 
 
