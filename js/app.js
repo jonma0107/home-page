@@ -19,7 +19,13 @@ function registrarEventListeners() {
     articulosCarrito = []; // ASÍ RESETEAMOS EL ARREGLO
 
     carritoHTML();
-  })
+  });
+  // MUESTRA LOS CURSOS DE LOCAL STORAGE
+  document.addEventListener('DOMContentLoaded', () => {
+    articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    carritoHTML();
+  });
 };
 
 // *************************************** FUNCIONES ****************************************
@@ -97,6 +103,8 @@ function carritoHTML() {
 
   });
 
+  sincronizarStorage();
+
 };
 
 // ******************************************************************************************
@@ -121,5 +129,10 @@ function eliminarCurso(e) {
   };
 
 };
+
+// *************************** FUNCIÓN SINCRONIZAR LOCAL STORAGE ******************************
+function sincronizarStorage() {
+  localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
+}
 
 
